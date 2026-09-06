@@ -1,13 +1,22 @@
-import Image from "next/image";
+import MainBtn from '@/components/Button';
 
-export default function Home() {
+export default function HomePage () {
   return (
-  
     <div>
-      <h1>Home Page</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste fugiat sequi possimus neque dignissimos quas qui saepe quasi maiores, atque voluptate doloribus laboriosam accusamus omnis quidem odit nam error esse.</p>
-    </div>
-    
+      <div></div>
 
-  );
+      <img />
+
+      <div>
+        <label htmlFor='user_email'>Email</label>
+      </div>
+      This is the home page
+        <input id="user_email" />
+ 
+
+        <MainBtn />
+        
+        
+    </div>
+  )
 }
