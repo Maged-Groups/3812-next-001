@@ -17,3 +17,15 @@
 3 - posts
 4 - recipes
 5 - Weather
+
+# 2026-09-13
+
+## Make these routes with proper componetns
+
+### Fetch data from dummyjson.com
+
+1 - quotes
+2 - todos
+3 - posts
+4 - recipes
+5 - Weather
