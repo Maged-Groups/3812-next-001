@@ -3,7 +3,7 @@ export default function TopNavbar() {
     <nav className="bg-sky-900 text-white flex gap-3 p-4">
       <a href="/">Home</a>
       <a href="/about">About</a>
-      <a href="/products">products</a>
+      <a href="/products">Products</a>
       <a href="/contacts">Contact us</a>
     </nav>
   );
