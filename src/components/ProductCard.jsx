@@ -19,6 +19,17 @@ export default function ProductCard({
         <Price discounted={discounted} price={price} />
       </div>
 
+      {/* Add to Cart */}
+      <div className="flex gap-3 items-center">
+        <button className="text-white bg-green-700 px-2 py-3 rounded w-8 h-8 flex justify-center items-center">
+          +
+        </button>
+        <span className="text-xl">0</span>
+        <button className="text-white bg-red-700 px-2 py-3 rounded w-8 h-8 flex justify-center items-center">
+          -
+        </button>
+      </div>
+
       <div className="my-4 flex">
         <a
           href={`/products/${id}`}
