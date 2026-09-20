@@ -1,10 +1,11 @@
+import Link from "next/link";
 import Price from "./Price";
 
 export default function ProductCard({
   title,
   id,
   price,
-  discounted = false,
+  discountPercentage = false,
   thumbnail,
 }) {
   return (
@@ -16,27 +17,16 @@ export default function ProductCard({
 
         <h2 className="text-xl text-gray-700 font-bold mt-20">{title}</h2>
 
-        <Price discounted={discounted} price={price} />
-      </div>
-
-      {/* Add to Cart */}
-      <div className="flex gap-3 items-center">
-        <button className="text-white bg-green-700 px-2 py-3 rounded w-8 h-8 flex justify-center items-center">
-          +
-        </button>
-        <span className="text-xl">0</span>
-        <button className="text-white bg-red-700 px-2 py-3 rounded w-8 h-8 flex justify-center items-center">
-          -
-        </button>
+        <Price discountPercentage={discountPercentage} price={price} />
       </div>
 
       <div className="my-4 flex">
-        <a
+        <Link
           href={`/products/${id}`}
           className="bg-sky-500 text-white flex-1 text-center p-2 rounded"
         >
           Show
-        </a>
+        </Link>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const data = await fetch("https://dummyjson.com/products")
 
 const products = data.products;
 
-export default function Home() {
+export default function ProductsPage() {
   return (
     <main className="bg-gray-100 min-h-screen px-10 py-16">
       <div className="text-center mb-12">
@@ -18,12 +18,12 @@ export default function Home() {
       {/* <div className="grid grid-cols-4 gap-8 max-w-6xl mx-auto">{newArray}</div> */}
 
       <div className="flex gap-8 max-w-6xl mx-auto flex-wrap">
-        {products.map(({ id, price, title, discounted, thumbnail }) => (
+        {products.map(({ id, price, title, discountPercentage, thumbnail }) => (
           <ProductCard
             key={Math.random() * Math.random()}
             price={price}
             title={title}
-            discounted={discounted}
+            discountPercentage={discountPercentage}
             thumbnail={thumbnail}
             id={id}
           />

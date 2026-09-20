@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function Register() {
+export default function RegisterPage() {
   // const arr = useState(0);
   // const fullNameLength = arr[0];
   // const fn = arr[1];

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-export default function Contacts() {
+export default function ContactsPage() {
   // Refs
   const fullNameRef = useRef();
   const mobileRef = useRef();
