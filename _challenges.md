@@ -29,3 +29,14 @@
 3 - posts
 4 - recipes
 5 - Weather
+
+# 2026-09-23
+
+- Create a component for the general Button
+- Create a component for the ButtonGroup
+  <ButtonGroup 
+    firstBtnText='Register'
+    secondBtnText='Login'
+    firstBtnColor='bg-green-500'
+    secondBtnColor='bg-sky-500'
+   />

@@ -1,4 +1,4 @@
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/features/products/components/ProductCard";
 
 const data = await fetch("https://dummyjson.com/products")
   .then((response) => response.json())

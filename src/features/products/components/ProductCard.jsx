@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Price from "./Price";
+import Price from "../../../components/Price";
 
 export default function ProductCard({
   title,

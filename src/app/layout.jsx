@@ -1,5 +1,5 @@
 import { Cairo } from "next/font/google";
-import TopNavbar from "@/components/TopNavbar";
+import TopNavbar from "@/components/organisms/TopNavbar";
 import "./globals.css";
 
 const cairoMain = Cairo({
