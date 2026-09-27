@@ -1,5 +1,5 @@
-import Icon from "@/components/atoms/Icon";
-import Field from "@/components/molecules/Field";
+import Icon from "@c/atoms/Icon";
+import Field from "@c/molecules/Field";
 
 export default function HomePage() {
   return (

@@ -1,4 +1,4 @@
-import Footer from "@/components/organisms/Footer";
+import Footer from "@c/organisms/Footer";
 
 export default function AuthLayout({ children }) {
   return (

@@ -1,4 +1,4 @@
-import MainBtn from "@/components/atoms/Button";
+import MainBtn from "@c/atoms/Button";
 
 export default function AboutPage() {
   return <div></div>;

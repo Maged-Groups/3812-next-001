@@ -1,4 +1,4 @@
-import ProductCard from "@/features/products/components/ProductCard";
+import ProductCard from "@f/products/components/ProductCard";
 import Image from "next/image";
 
 export default function Home() {

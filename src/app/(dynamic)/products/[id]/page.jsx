@@ -3,11 +3,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import Price from "@/components/Price";
+import Price from "@c/Price";
+import AddToCart from "@f/products/components/AddToCart";
 
 export default function ProductPage() {
-  const [quantity, setQuantity] = useState(0);
-
   const [product, setProduct] = useState(null);
 
   const [randomProducts, setRandomProducts] = useState([]);
@@ -55,17 +54,6 @@ export default function ProductPage() {
 
     getRandomProducts();
   }, []);
-
-  const increase = () => {
-    console.log("increase");
-    setQuantity(quantity + 1);
-  };
-
-  const decrease = () => {
-    console.log("decrease");
-    if (quantity === 0) return;
-    setQuantity(quantity - 1);
-  };
 
   const changeInstallmentPlan = (planPeriod) => {
     console.log("changeInstallmentPlan called");
@@ -122,21 +110,7 @@ export default function ProductPage() {
       </div>
 
       {/* Add to Cart */}
-      <div className="flex gap-3 items-center">
-        <button
-          onClick={increase}
-          className="text-white bg-green-700 px-2 py-3 rounded w-8 h-8 flex justify-center items-center"
-        >
-          +
-        </button>
-        <span className="text-xl">{quantity}</span>
-        <button
-          onClick={decrease}
-          className="text-white bg-red-700 px-2 py-3 rounded w-8 h-8 flex justify-center items-center"
-        >
-          -
-        </button>
-      </div>
+      <AddToCart />
 
       <div className="border p-5">
         <h3 className="text-3xl mb-4">You may like</h3>
