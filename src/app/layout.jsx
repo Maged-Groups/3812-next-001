@@ -2,6 +2,7 @@ import { Cairo } from "next/font/google";
 import TopNavbar from "@c/organisms/TopNavbar";
 import "./globals.css";
 import AppProvider from "@/providers/AppProvider";
+import Global from "@/providers/Global";
 
 const cairoMain = Cairo({
   variable: "--font-cairo-main",
@@ -24,6 +25,8 @@ export default function RootLayout({ children }) {
         <AppProvider>
           <TopNavbar />
           {children}
+
+          <Global />
         </AppProvider>
       </body>
     </html>
