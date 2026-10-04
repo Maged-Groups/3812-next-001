@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import Price from "@c/Price";
@@ -15,6 +16,8 @@ export default function ProductPage() {
 
   const [plan, setPlan] = useState(0);
 
+  const accessToken = useSelector((store) => store.userSlice.accessToken);
+
   const installmentsPlans = [0, 3, 6, 12];
 
   console.log("randomProducts", randomProducts);
@@ -27,7 +30,13 @@ export default function ProductPage() {
 
     const getProduct = async () => {
       console.log("getProduct called");
-      const data = await fetch("https://dummyjson.com/products/" + id)
+      const data = await fetch("https://dummyjson.com/products/" + id, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + accessToken,
+        },
+      })
         .then((res) => res.json())
         .then((data) => data);
 

@@ -1,6 +1,11 @@
 import ProductCard from "@f/products/components/ProductCard";
 
-const data = await fetch("https://dummyjson.com/products")
+const data = await fetch("https://dummyjson.com/products", {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+  },
+})
   .then((response) => response.json())
   .then((data) => data);
 

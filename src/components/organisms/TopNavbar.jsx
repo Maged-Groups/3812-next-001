@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import Icon from "@c/atoms/Icon";
 import MainBtn from "@c/atoms/Button";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { logout } from "@/lib/redux/userSlice";
 
 export default function TopNavbar() {
@@ -28,7 +28,7 @@ export default function TopNavbar() {
       image: state.userSlice.image,
       loggedin: state.userSlice.loggedin,
     };
-  });
+  }, shallowEqual);
 
   const { firstName, lastName, image, loggedin } = userData;
 
@@ -53,6 +53,8 @@ export default function TopNavbar() {
     console.log("handleLogout fired");
     dispatch(logout());
     setShowAccountMenu(false);
+    localStorage.removeItem("user");
+    localStorage.clear();
     router.replace("/");
   };
 
@@ -158,7 +160,7 @@ export default function TopNavbar() {
           </div>
         ) : (
           <div className="flex items-center gap-3">
-            <MainBtn text="Login" variant="bg-green-600" />
+            <MainBtn href="/login" text="Login" variant="bg-green-600" />
             <MainBtn text="Register" variant="bg-sky-600" />
           </div>
         )}
