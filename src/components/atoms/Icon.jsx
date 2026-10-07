@@ -1,7 +1,7 @@
 import { Bs1Circle, BsCart2 } from "react-icons/bs";
 import { FaHome } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
-import { IoCloseSharp } from "react-icons/io5";
+import { IoCloseSharp, IoEye, IoEyeOff } from "react-icons/io5";
 import { LuAirplay, LuHeart } from "react-icons/lu";
 
 export default function Icon({
@@ -69,6 +69,24 @@ export default function Icon({
     case "close":
       return (
         <IoCloseSharp
+          color={color}
+          className={`${extraCSS}`}
+          onClick={iconAction}
+          size={size}
+        />
+      );
+    case "eye":
+      return (
+        <IoEye
+          color={color}
+          className={`${extraCSS}`}
+          onClick={iconAction}
+          size={size}
+        />
+      );
+    case "eyeOff":
+      return (
+        <IoEyeOff
           color={color}
           className={`${extraCSS}`}
           onClick={iconAction}

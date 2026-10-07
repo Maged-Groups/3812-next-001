@@ -3,6 +3,7 @@ import TopNavbar from "@c/organisms/TopNavbar";
 import "./globals.css";
 import AppProvider from "@/providers/AppProvider";
 import Global from "@/providers/Global";
+import RegisterForm from "@/features/auth/register/RegisterForm";
 
 const cairoMain = Cairo({
   variable: "--font-cairo-main",
@@ -25,6 +26,8 @@ export default function RootLayout({ children }) {
         <AppProvider>
           <TopNavbar />
           {children}
+
+          <RegisterForm />
 
           <Global />
         </AppProvider>

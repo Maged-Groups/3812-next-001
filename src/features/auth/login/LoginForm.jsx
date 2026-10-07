@@ -6,6 +6,8 @@ import { errors } from "@/data/errors";
 import { login } from "@/lib/redux/userSlice";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
+import Icon from "@/components/atoms/Icon";
+import { hideLogin } from "@/lib/redux/accountSlice";
 
 export default function LoginForm() {
   const [error, setError] = useState("");
@@ -53,9 +55,21 @@ export default function LoginForm() {
     router.replace("/");
   };
 
+  const handleCloseModal = () => {
+    dispatch(hideLogin());
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-lg bg-white rounded-2xl shadow-xl p-8 md:p-10">
+    <div className="fixed top-0 left-0 right-0 bottom-0 bg-gray-950/50 flex items-center justify-center p-8">
+      <div className="w-full max-w-lg bg-gray-100 rounded-2xl shadow-xl p-8 md:p-10 relative">
+        {/* Close Button */}
+        <Icon
+          name="close"
+          extraCSS="absolute top-10 right-10 cursor-pointer"
+          iconAction={handleCloseModal}
+          size={30}
+        />
+
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-800 mb-2">

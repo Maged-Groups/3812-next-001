@@ -107,7 +107,11 @@ export default function ProductPage() {
       {/* installments */}
       <div className="p-4 flex gap-3 flex-wrap">
         {installmentsPlans.map((plan) => (
-          <div onClick={() => changeInstallmentPlan(plan)} className="p-3">
+          <div
+            key={plan}
+            onClick={() => changeInstallmentPlan(plan)}
+            className="p-3"
+          >
             {plan} Months
           </div>
         ))}
@@ -126,7 +130,11 @@ export default function ProductPage() {
 
         <div className="flex flex-wrap gap-4 items-center">
           {randomProducts.map(({ thumbnail, id: randId }) => (
-            <Link href={`/products/${randId}`} className="border p-2 w-32 h-32">
+            <Link
+              key={randId}
+              href={`/products/${randId}`}
+              className="border p-2 w-32 h-32"
+            >
               <img src={thumbnail}></img>
             </Link>
           ))}

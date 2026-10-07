@@ -9,6 +9,7 @@ import MainBtn from "@c/atoms/Button";
 
 import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { logout } from "@/lib/redux/userSlice";
+import { showLogin } from "@/lib/redux/accountSlice";
 
 export default function TopNavbar() {
   const [showAccountMenu, setShowAccountMenu] = useState(false);
@@ -18,6 +19,11 @@ export default function TopNavbar() {
   const dispatch = useDispatch();
 
   const cartItems = useSelector((store) => store.cartSlice.cartItems);
+
+  // handleLogin
+  const handleLogin = () => {
+    dispatch(showLogin());
+  };
 
   // const {firstName,lastName,image,loggedin} = useSelector(state=>state.userData)
 
@@ -160,7 +166,11 @@ export default function TopNavbar() {
           </div>
         ) : (
           <div className="flex items-center gap-3">
-            <MainBtn href="/login" text="Login" variant="bg-green-600" />
+            <MainBtn
+              text="Login"
+              variant="bg-green-600"
+              onClick={handleLogin}
+            />
             <MainBtn text="Register" variant="bg-sky-600" />
           </div>
         )}

@@ -1,12 +1,16 @@
 "use client";
 
 import { ToastContainer } from "react-toastify";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "@/lib/redux/userSlice";
 import { useEffect } from "react";
 
+import LoginForm from "@/features/auth/login/LoginForm";
+
 export default function Global() {
   const dispatch = useDispatch();
+
+  const loginVisible = useSelector((store) => store.accountSlice.loginVisible);
 
   useEffect(() => {
     if (window && window.localStorage) {
@@ -22,6 +26,8 @@ export default function Global() {
   return (
     <>
       <ToastContainer theme="light" position="bottom-center" />
+
+      {loginVisible && <LoginForm />}
     </>
   );
 }
